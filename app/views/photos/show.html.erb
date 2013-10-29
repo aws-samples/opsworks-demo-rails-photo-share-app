@@ -1,13 +1,17 @@
 <div class="hero-unit">
-  <div class="row">
-    <%= render :partial => "shared/flash_messages", :locals => {:flash => flash} %>
+  <%= render :partial => "shared/flash_messages", :locals => {:flash => flash} %>
+  <h1><%= @photo.name %>
+  <div class="floatright">
+    <%= link_to 'Edit', edit_photo_path(@photo), :class => "btn btn-primary" %>
+    <%= link_to 'Like', photo_vote_up_path(@photo), :class => "btn btn-success" %>
+    <%= link_to 'Dislike', photo_vote_down_path(@photo), :class => "btn btn-danger" %>
   </div>
-  <h1><%= @photo.name %>  <%= link_to 'Edit', edit_photo_path(@photo), :class => "btn floatright" %>
-    </h1>
+  </h1>
   <div class="img-polaroid">
     <%= image_tag(@photo.picture.url) if @photo.picture.present? %>
   </div>
-  <p class="photo-desc">
-    <%= @photo.description %>
-  </p>
+  <div class="photo-desc">
+    <p><b>Likes:</b> <%= @photo.votes %></p>
+    <p><b>Description:</b> <%= @photo.description %></p>
+  </div>
 </div>

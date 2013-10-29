@@ -14,7 +14,7 @@ body {
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
-  .desc {
+  .footer {
     position: absolute;
     bottom: 0;
     padding: 10px;
@@ -25,16 +25,24 @@ body {
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
     margin: 0;
+    .photo-desc {
+      width: 220px;
+      overflow: hidden;
+    }
     .links {
       position: absolute;
       top: 10px;
+      right: 10px;
+    }
+    .vote {
+      position: absolute;
+      top: 30px;
       right: 10px;
     }
   }
 }
 
 .hero-unit {
-
   .photo-desc {
     margin-top: 20px;
   }

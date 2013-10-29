@@ -11,17 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421210849) do
+ActiveRecord::Schema.define(:version => 20130905115810) do
 
   create_table "photos", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.integer  "votes",                :default => 0
   end
 
   create_table "pictures", :force => true do |t|

@@ -1,18 +1,29 @@
+<div class="row">
+<div class="span12">
+    <%= render :partial => "shared/flash_messages", :locals => {:flash => flash} %>
+  </div>
+</div>
 <section class="row">
   <% @photos.each do |photo| %>
   <article class="photo span4 img-polaroid">
     <%= link_to image_tag(photo.picture.url), photo if photo.picture.present? %>
-    <div class="span4 desc">
-      <p><b><%= photo.name %></b><br/>
-        <%= photo.description %></p>
-        <div class="links">
-          <%= link_to '', photo, :class => "icon-eye-open" %>
-          <%= link_to '', edit_photo_path(photo), :class => "icon-edit" %>
-          <%= link_to '', photo, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'icon-remove' %>
-        </div>
+    <div class="footer span4">
+      <p class="photo-desc">
+        <b><%= photo.name %> </b>
+        <br><span>Likes: <%= photo.votes %></span>   
+      </p>
+      <div class="links">
+        <%= link_to '', photo, :class => "icon-eye-open" %>
+        <%= link_to '', edit_photo_path(photo), :class => "icon-edit" %>
+        <%= link_to '', photo, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'icon-remove' %>
       </div>
-    </article>
-    <% end %>
-  </section>
+      <div class="vote">
+       <%= link_to '', photo_vote_up_path(photo), :class => "icon-thumbs-up" %>
+       <%= link_to '', photo_vote_down_path(photo), :class => "icon-thumbs-down" %> 
+     </div>
+   </div>
+ </article>
+ <% end %>
+</section>
 
-  <%= link_to 'New Photo', new_photo_path, :class => 'btn btn-primary' %>
+<%= link_to 'New Photo', new_photo_path, :class => 'btn btn-primary' %>

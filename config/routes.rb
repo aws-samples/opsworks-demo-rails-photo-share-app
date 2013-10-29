@@ -7,6 +7,9 @@ Newphotopoll::Application.routes.draw do
   
   match '/' => 'photos#index'
 
+  get '/photos/vote_up/:id', to: 'photos#vote_up', as: 'photo_vote_up'
+  get '/photos/vote_down/:id', to: 'photos#vote_down', as: 'photo_vote_down'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

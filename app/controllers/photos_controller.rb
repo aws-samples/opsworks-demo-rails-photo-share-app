@@ -71,4 +71,18 @@ class PhotosController < ApplicationController
   def picture
     send_data Photo.find(params[:id]).picture.file_contents params[:style]
   end
+
+  def vote_up
+    @photo = Photo.find(params[:id])
+    @photo.vote_up
+    @photo.save!
+    redirect_to request.referer, notice: 'You liked the image!'
+  end
+
+  def vote_down
+    @photo = Photo.find(params[:id])
+    @photo.vote_down
+    @photo.save!
+    redirect_to request.referer, notice: 'You disliked the image!'
+  end
 end
