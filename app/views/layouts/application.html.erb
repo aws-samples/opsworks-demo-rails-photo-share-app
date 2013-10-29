@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Opsworks Demo Rails Photo Share App</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="navbar navbar-fixed-top">
+    <nav class="navbar-inner">
+      <div class="container">
+        <%= link_to "AWS OpsWorks - Demo App", photos_path, :class => 'brand' %>
+      </div>
+    </nav>
+  </header>
+  <div id="main" role="main">
+    <div class="container">
+      <div class="content"><%= yield %></div>
+    </div>
+  </div>
+</body>
+</html>
+

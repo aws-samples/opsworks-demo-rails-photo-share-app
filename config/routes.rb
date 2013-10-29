@@ -1,4 +1,12 @@
-Photopoll1::Application.routes.draw do
+Newphotopoll::Application.routes.draw do
+  resources :photos do
+    collection do
+      match 'pictures/:id' => 'photos#picture'
+    end
+  end
+  
+  match '/' => 'photos#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

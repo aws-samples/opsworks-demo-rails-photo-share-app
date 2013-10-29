@@ -1,0 +1,25 @@
+body { padding-top: 60px; }
+body .hero-unit {
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 30px 60px;
+  position: relative;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  .alert {
+    font-size: 14px;
+  }
+  li {
+    line-height: 20px;
+  }
+}
+.floatright {
+  float: right;
+}
+
+.btn {
+  font-weight: normal;
+  letter-spacing: 0;
+}

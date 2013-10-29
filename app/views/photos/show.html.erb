@@ -1,0 +1,13 @@
+<div class="hero-unit">
+  <div class="row">
+    <%= render :partial => "shared/flash_messages", :locals => {:flash => flash} %>
+  </div>
+  <h1><%= @photo.name %>  <%= link_to 'Edit', edit_photo_path(@photo), :class => "btn floatright" %>
+    </h1>
+  <div class="img-polaroid">
+    <%= image_tag(@photo.picture.url) if @photo.picture.present? %>
+  </div>
+  <p class="photo-desc">
+    <%= @photo.description %>
+  </p>
+</div>

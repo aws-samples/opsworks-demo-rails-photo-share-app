@@ -1,0 +1,18 @@
+<section class="row">
+  <% @photos.each do |photo| %>
+  <article class="photo span4 img-polaroid">
+    <%= link_to image_tag(photo.picture.url), photo if photo.picture.present? %>
+    <div class="span4 desc">
+      <p><b><%= photo.name %></b><br/>
+        <%= photo.description %></p>
+        <div class="links">
+          <%= link_to '', photo, :class => "icon-eye-open" %>
+          <%= link_to '', edit_photo_path(photo), :class => "icon-edit" %>
+          <%= link_to '', photo, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'icon-remove' %>
+        </div>
+      </div>
+    </article>
+    <% end %>
+  </section>
+
+  <%= link_to 'New Photo', new_photo_path, :class => 'btn btn-primary' %>

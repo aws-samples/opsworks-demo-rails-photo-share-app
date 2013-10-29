@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Photopoll1::Application.load_tasks
+Newphotopoll::Application.load_tasks

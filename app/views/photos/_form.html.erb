@@ -1,0 +1,37 @@
+<div class="form-horizontal">
+  <%= form_for(@photo) do |f| %>
+  <% if @photo.errors.any? %>
+  <div id="error_explanation" class="alert alert-error">
+    <b><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</b>
+    <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, 'Name*', :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, 'Description' , :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_area :description, :rows => '10' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :picture, 'Image*' , :class => "control-label" %>
+    <div class="controls">
+      <%= f.file_field :picture %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+    <%= link_to 'Cancel', photos_path, :class => 'btn' %>
+  </div>
+  <% end %>
+</div>

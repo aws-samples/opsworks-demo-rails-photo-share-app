@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Photopoll1::Application.config.secret_token = '747e8b8d3445f79c66bc03cc63cc5e395d290fa6aa0c05305807d5eab0b988d07299fdc46bb630c2be495e7ba8e344678f753cfa92acfca4bff7d604f65747de'
+Newphotopoll::Application.config.secret_token = 'd61ecd23fc0c5761e098d2c12ab7d969d830b7ca42f1986607317709bac1e27bed8a3f56726bcdecb0a630f58e75b230d36dbefc89aaeae854abe4ddcffef478'
