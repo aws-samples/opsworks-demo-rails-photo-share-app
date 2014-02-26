@@ -9,3 +9,5 @@
 7. Deploy the App
 
 For more information go to [OpsWorks userguide](http://docs.aws.amazon.com/opsworks/latest/userguide/how_it_works.html).
+
+Note: if you plan to use Unicorn, please update the Gemfile.
