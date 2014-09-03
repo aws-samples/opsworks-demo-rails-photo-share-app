@@ -23,3 +23,7 @@ gem 'rails', '3.2.15'
 
 # To use debugger
 # gem 'debugger'
+#
+group :test do
+ gem "rspec-rails"
+end
