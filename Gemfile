@@ -6,7 +6,7 @@ gem 'railties', '3.2.15'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
-gem "paperclip", "3.4.1"
+gem "paperclip", "2.4.0"
 gem "paperclip_database", "1.0.5"
 
 group :production do
